@@ -1,4 +1,4 @@
-package no.nav.vedtak.konfig;
+package no.nav.foreldrepenger.konfig;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Member;
@@ -29,8 +29,8 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import no.nav.vedtak.konfig.KonfigVerdi.Converter;
-import no.nav.vedtak.konfig.KonfigVerdiProviderOutput.ProviderOutput;
+import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
+import no.nav.foreldrepenger.konfig.KonfigVerdiProviderOutput.ProviderOutput;
 
 /* Producer av konfig verdier. Støtter pluggbart antall providere av konfigurasjonsverdier. */
 @ApplicationScoped
