@@ -198,7 +198,10 @@ public final class Environment {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "[cluster=" + cluster + ", namespace=" + namespace + ", propertySources=" + propertySources + "]";
+        return getClass().getSimpleName()
+            + "[cluster=" + cluster
+            + ", namespace=" + namespace
+            + ", propertySources=" + propertySources
+            + "]";
     }
-
 }
