@@ -69,7 +69,7 @@ public class KonfigVerdiProdusent {
     public Boolean getKonfigVerdiBoolean(final InjectionPoint ip) {
         Object verdi = getEnkelVerdi(ip);
         if (verdi == null) {
-            return null;
+            return null; //NOSONAR
         }
         return verdi instanceof Boolean ? (Boolean) verdi : Boolean.parseBoolean((String) verdi);
     }
@@ -88,7 +88,10 @@ public class KonfigVerdiProdusent {
     @Produces
     public Period getKonfigVerdiPeriod(final InjectionPoint ip) {
         Object verdi = getEnkelVerdi(ip);
-        return verdi == null ? null : (verdi instanceof Period ? (Period) verdi : Period.parse((String) verdi));
+        if (verdi == null) {
+            return null;
+        }
+        return verdi instanceof Period ? (Period) verdi : Period.parse((String) verdi);
     }
 
     @KonfigVerdi
