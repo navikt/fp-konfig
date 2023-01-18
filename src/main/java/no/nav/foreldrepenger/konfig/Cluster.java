@@ -6,12 +6,9 @@ import java.util.Arrays;
 import java.util.Optional;
 
 public enum Cluster {
-    LOCAL("local"),
     VTP("vtp"),
     DEV_FSS("dev-fss"),
-    DEV_SBS("dev-sbs"),
     DEV_GCP("dev-gcp"),
-    PROD_SBS("prod-sbs"),
     PROD_GCP("prod-gcp"),
     PROD_FSS("prod-fss");
 
@@ -50,7 +47,7 @@ public enum Cluster {
         return Arrays.stream(values())
                 .filter(Cluster::isActive)
                 .findFirst()
-                .orElse(LOCAL);
+                .orElse(VTP);
     }
 
     public static Cluster of(String name) {
