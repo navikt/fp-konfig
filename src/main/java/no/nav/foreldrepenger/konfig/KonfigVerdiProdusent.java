@@ -64,7 +64,7 @@ public class KonfigVerdiProdusent {
         if (verdi == null) {
             return null; //NOSONAR
         }
-        return verdi instanceof Boolean ? (Boolean) verdi : Boolean.parseBoolean((String) verdi);
+        return verdi instanceof Boolean value ? value : Boolean.parseBoolean((String) verdi);
     }
 
     @KonfigVerdi
@@ -74,7 +74,7 @@ public class KonfigVerdiProdusent {
         if (verdi == null) {
             return null;
         }
-        return verdi instanceof Integer ? (Integer) verdi : Integer.valueOf((String) verdi);
+        return verdi instanceof Integer value ? value : Integer.valueOf((String) verdi);
     }
 
     @KonfigVerdi
@@ -84,7 +84,7 @@ public class KonfigVerdiProdusent {
         if (verdi == null) {
             return null;
         }
-        return verdi instanceof Period ? (Period) verdi : Period.parse((String) verdi);
+        return verdi instanceof Period value ? value : Period.parse((String) verdi);
     }
 
     @KonfigVerdi
@@ -94,7 +94,7 @@ public class KonfigVerdiProdusent {
         if (verdi == null) {
             return null;
         }
-        return verdi instanceof Duration ? (Duration) verdi : Duration.parse((String) verdi);
+        return verdi instanceof Duration value ? value : Duration.parse((String) verdi);
     }
 
     @KonfigVerdi
@@ -104,7 +104,7 @@ public class KonfigVerdiProdusent {
         if (verdi == null) {
             return null;
         }
-        return verdi instanceof LocalDate ? (LocalDate) verdi : LocalDate.parse((String) verdi);
+        return verdi instanceof LocalDate value ? value : LocalDate.parse((String) verdi);
     }
 
     @KonfigVerdi
@@ -114,7 +114,7 @@ public class KonfigVerdiProdusent {
         if (verdi == null) {
             return null;
         }
-        return verdi instanceof Long ? (Long) verdi : Long.valueOf((String) verdi);
+        return verdi instanceof Long value ? value : Long.valueOf((String) verdi);
     }
 
     /*
@@ -129,7 +129,7 @@ public class KonfigVerdiProdusent {
             if (verdi == null) {
                 return null;
             }
-            return verdi instanceof URI ? (URI) verdi : new URI((String) verdi);
+            return verdi instanceof URI value ? value : new URI((String) verdi);
         } catch (URISyntaxException e) {
             throw new IllegalStateException("KonfigVerdi [" + verdi + "] er ikke en java.net.URI", e); //$NON-NLS-1$ //$NON-NLS-2$
         }

@@ -1,12 +1,12 @@
 package no.nav.foreldrepenger.konfig;
 
-import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
+
+import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
 
 public class DefaultValueKonfigProvider implements KonfigVerdiProvider {
 
@@ -29,7 +29,7 @@ public class DefaultValueKonfigProvider implements KonfigVerdiProvider {
     public <V> List<V> getVerdier(String verdier, Converter<V> converter) {
         return Arrays.stream(verdier.split(",\\s*"))
             .map(converter::tilVerdi)
-            .collect(Collectors.toList());
+            .toList();
 
     }
 
