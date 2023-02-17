@@ -17,7 +17,8 @@ public class EnvPropertiesKonfigVerdiProvider extends PropertiesKonfigVerdiProvi
         // lazy init singleton
         static final Properties ENV = getEnv();
 
-        private Init() {}
+        private Init() {
+        }
 
         private static Properties getEnv() {
             var p = new Properties();

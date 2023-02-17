@@ -24,7 +24,7 @@ public class Namespace {
 
     public static Namespace current() {
         return Namespace.of(Optional.ofNullable(getenv(NaisProperty.NAMESPACE.propertyName()))
-                .orElse(DEFAULT_NAMESPACE));
+            .orElse(DEFAULT_NAMESPACE));
     }
 
     public static Namespace foreldrepenger() {

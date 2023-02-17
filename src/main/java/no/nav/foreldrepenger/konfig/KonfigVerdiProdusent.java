@@ -138,7 +138,7 @@ public class KonfigVerdiProdusent {
     /*
      * Returnerer Liste av verdier.
      */
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @KonfigVerdi
     @Produces
     public <V> List<V> getKonfigVerdiList(final InjectionPoint ip) {
@@ -151,7 +151,7 @@ public class KonfigVerdiProdusent {
     /*
      * Returnerer Liste av verdier.
      */
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @KonfigVerdi
     @Produces
     public <V> Map<String, V> getKonfigVerdiMap(final InjectionPoint ip) {
@@ -167,7 +167,7 @@ public class KonfigVerdiProdusent {
         return getVerdi(ip, annotation, KonfigVerdiProviderOutput.SIMPLE);
     }
 
-    @SuppressWarnings({ "rawtypes" })
+    @SuppressWarnings({"rawtypes"})
     protected <T> T getVerdi(InjectionPoint ip, KonfigVerdi annotation, ProviderOutput<T> outputFunction) {
         String key = annotation.value();
         Converter converter = getConverter(annotation.converter());
@@ -177,7 +177,7 @@ public class KonfigVerdiProdusent {
 
     @SuppressWarnings("rawtypes")
     public <T> T getVerdi(InjectionPoint ip, KonfigVerdi annotation, ProviderOutput<T> outputFunction, String key,
-            Converter converter) {
+                          Converter converter) {
         for (KonfigVerdiProvider kvp : providers) {
             try {
                 if (kvp.harVerdi(key)) {
@@ -187,15 +187,15 @@ public class KonfigVerdiProdusent {
                 }
             } catch (RuntimeException e) {
                 throw new IllegalStateException(
-                        "Kunne ikke slå opp verdi for key [" + key + "] fra " + kvp.getClass().getName()
-                                + "; InjectionPoint=" + ip,
-                        e);
+                    "Kunne ikke slå opp verdi for key [" + key + "] fra " + kvp.getClass().getName()
+                        + "; InjectionPoint=" + ip,
+                    e);
             }
         }
         String defaultVerdi = annotation.defaultVerdi();
         if (annotation.required() && defaultVerdi.isEmpty()) {
             throw new IllegalStateException(
-                    "Mangler verdi for key(required): " + annotation.value() + "; InjectionPoint=" + ip); //$NON-NLS-1$ //$NON-NLS-2$
+                "Mangler verdi for key(required): " + annotation.value() + "; InjectionPoint=" + ip); //$NON-NLS-1$ //$NON-NLS-2$
         } else {
             if (!defaultVerdi.isEmpty()) {
                 T output = outputFunction.getOutput(DEFAULTVALUEPROVIDER, defaultVerdi, converter);
@@ -210,13 +210,13 @@ public class KonfigVerdiProdusent {
 
         Member member = ip.getMember();
         String name = Constructor.class.isAssignableFrom(member.getClass())
-                ? member.getName()
-                : member.getDeclaringClass().getName() + "#" + member.getName(); //$NON-NLS-1$
+            ? member.getName()
+            : member.getDeclaringClass().getName() + "#" + member.getName(); //$NON-NLS-1$
         if (!konfigVerdiReferanser.contains(name)) {
             String key = annot.value();
             Object val = SKJUL.matcher(key).matches()
-                    ? "********* (skjult)"// $NON-NLS-1$
-                    : output;
+                ? "********* (skjult)"// $NON-NLS-1$
+                : output;
             konfigVerdiReferanser.add(name);
             log.info("{}: {}=\"{}\" @{}", KonfigVerdi.class.getSimpleName(), key, val, name); //$NON-NLS-1$
         }

@@ -46,7 +46,7 @@ class EnvironmentTest {
     void testDuration() {
         assertEquals(Duration.ofDays(42), ENV.getProperty("duration.property", Duration.class));
         assertEquals(Duration.ofDays(2),
-                ENV.getProperty("ikke.funnet", Duration.class, Duration.ofDays(2)));
+            ENV.getProperty("ikke.funnet", Duration.class, Duration.ofDays(2)));
     }
 
     @Test

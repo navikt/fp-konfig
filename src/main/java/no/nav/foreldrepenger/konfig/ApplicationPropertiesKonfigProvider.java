@@ -27,7 +27,7 @@ public class ApplicationPropertiesKonfigProvider extends PropertiesKonfigVerdiPr
         private static Properties lesFra() {
             var c = new Properties();
             lesFra(namespaceKonfig(), lesFra(clusterKonfig(), lesFra("", new Properties())))
-                    .forEach((k, v) -> c.put(k.toString().toLowerCase(), v.toString()));
+                .forEach((k, v) -> c.put(k.toString().toLowerCase(), v.toString()));
             return c;
         }
 
@@ -72,7 +72,7 @@ public class ApplicationPropertiesKonfigProvider extends PropertiesKonfigVerdiPr
 
         private static String clusterName() {
             return Optional.ofNullable(getenv(NaisProperty.CLUSTER.propertyName()))
-                    .orElse(LOCAL);
+                .orElse(LOCAL);
         }
     }
 
@@ -88,7 +88,7 @@ public class ApplicationPropertiesKonfigProvider extends PropertiesKonfigVerdiPr
     @Override
     public <V> V getVerdi(String key, Converter<V> converter) {
         return Optional.ofNullable(super.getVerdi(key.toLowerCase(), converter))
-                .orElse(null);
+            .orElse(null);
     }
 
     @Override

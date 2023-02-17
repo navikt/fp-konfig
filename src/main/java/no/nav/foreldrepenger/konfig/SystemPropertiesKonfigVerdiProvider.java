@@ -4,7 +4,9 @@ import javax.enterprise.context.Dependent;
 
 import static no.nav.foreldrepenger.konfig.StandardPropertySource.SYSTEM_PROPERTIES;
 
-/** Henter properties fra {@link System#getProperties}. */
+/**
+ * Henter properties fra {@link System#getProperties}.
+ */
 @Dependent
 public class SystemPropertiesKonfigVerdiProvider extends PropertiesKonfigVerdiProvider {
     public static final int PRIORITET = Integer.MIN_VALUE;

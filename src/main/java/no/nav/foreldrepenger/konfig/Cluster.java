@@ -45,16 +45,16 @@ public enum Cluster {
     public static Cluster current() {
         var active = getenv(NaisProperty.CLUSTER.propertyName());
         return Arrays.stream(values())
-                .filter(c -> active != null && Objects.equals(active, c.name))
-                .findFirst()
-                .orElse(LOCAL);
+            .filter(c -> active != null && Objects.equals(active, c.name))
+            .findFirst()
+            .orElse(LOCAL);
     }
 
     public static Cluster of(String name) {
         return Arrays.stream(values())
-                .filter(v -> v.name.equals(name))
-                .findFirst()
-                .orElseThrow();
+            .filter(v -> v.name.equals(name))
+            .findFirst()
+            .orElseThrow();
     }
 
 }
