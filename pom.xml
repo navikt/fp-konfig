@@ -28,6 +28,7 @@
                 <artifactId>fp-bom</artifactId>
                 <version>0.4.3</version>
                 <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
