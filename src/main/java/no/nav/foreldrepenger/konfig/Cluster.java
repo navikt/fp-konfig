@@ -1,9 +1,9 @@
 package no.nav.foreldrepenger.konfig;
 
-import static java.lang.System.getenv;
-
 import java.util.Arrays;
 import java.util.Objects;
+
+import static java.lang.System.getenv;
 
 public enum Cluster {
     LOCAL("local"),

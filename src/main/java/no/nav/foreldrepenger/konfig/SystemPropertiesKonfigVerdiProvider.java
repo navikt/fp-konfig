@@ -1,8 +1,8 @@
 package no.nav.foreldrepenger.konfig;
 
-import static no.nav.foreldrepenger.konfig.StandardPropertySource.SYSTEM_PROPERTIES;
-
 import javax.enterprise.context.Dependent;
+
+import static no.nav.foreldrepenger.konfig.StandardPropertySource.SYSTEM_PROPERTIES;
 
 /** Henter properties fra {@link System#getProperties}. */
 @Dependent

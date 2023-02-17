@@ -1,6 +1,6 @@
 package no.nav.foreldrepenger.konfig;
 
-import static java.lang.System.getenv;
+import no.nav.foreldrepenger.konfig.KonfigVerdi.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
@@ -15,16 +15,7 @@ import java.util.Properties;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-import no.nav.foreldrepenger.konfig.KonfigVerdi.BooleanConverter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.DurationConverter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.IntegerConverter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.LocalDateConverter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.LongConverter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.NoConverter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.PeriodConverter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.UriConverter;
-import no.nav.foreldrepenger.konfig.KonfigVerdi.UrlConverter;
+import static java.lang.System.getenv;
 
 public final class Environment {
 

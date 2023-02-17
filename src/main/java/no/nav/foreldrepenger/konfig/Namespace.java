@@ -1,8 +1,8 @@
 package no.nav.foreldrepenger.konfig;
 
-import static java.lang.System.getenv;
-
 import java.util.Optional;
+
+import static java.lang.System.getenv;
 
 public class Namespace {
 

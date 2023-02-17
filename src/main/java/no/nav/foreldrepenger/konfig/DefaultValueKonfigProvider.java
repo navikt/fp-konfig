@@ -1,12 +1,12 @@
 package no.nav.foreldrepenger.konfig;
 
+import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
-
-import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
 
 public class DefaultValueKonfigProvider implements KonfigVerdiProvider {
 

@@ -1,18 +1,16 @@
 package no.nav.foreldrepenger.konfig;
 
-import static java.lang.System.getenv;
-import static no.nav.foreldrepenger.konfig.StandardPropertySource.APP_PROPERTIES;
+import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.enterprise.context.Dependent;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.Properties;
 
-import javax.enterprise.context.Dependent;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
+import static java.lang.System.getenv;
+import static no.nav.foreldrepenger.konfig.StandardPropertySource.APP_PROPERTIES;
 
 @Dependent
 public class ApplicationPropertiesKonfigProvider extends PropertiesKonfigVerdiProvider {

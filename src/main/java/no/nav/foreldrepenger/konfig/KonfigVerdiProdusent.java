@@ -1,21 +1,9 @@
 package no.nav.foreldrepenger.konfig;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Member;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentSkipListSet;
-import java.util.regex.Pattern;
+import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
+import no.nav.foreldrepenger.konfig.KonfigVerdiProviderOutput.ProviderOutput;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
@@ -25,12 +13,17 @@ import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.Annotated;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.inject.Inject;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import no.nav.foreldrepenger.konfig.KonfigVerdi.Converter;
-import no.nav.foreldrepenger.konfig.KonfigVerdiProviderOutput.ProviderOutput;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Member;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.regex.Pattern;
 
 /* Producer av konfig verdier. Støtter pluggbart antall providere av konfigurasjonsverdier. */
 @ApplicationScoped
