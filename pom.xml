@@ -7,7 +7,7 @@
     <parent>
         <groupId>no.nav.foreldrepenger.felles</groupId>
         <artifactId>fp-bom</artifactId>
-        <version>0.4.3</version>
+        <version>0.4.5</version>
     </parent>
 
     <groupId>no.nav.foreldrepenger</groupId>
@@ -58,9 +58,9 @@
                 <configuration>
                     <environmentVariables>
                         <mvn>true</mvn>
-                        <VG>http://www.vg.no</VG>
+                        <NAV>http://www.nav.no</NAV>
                         <NAIS_CLUSTER_NAME>prod-fss</NAIS_CLUSTER_NAME>
-                        <NAIS_NAMESPACE>jalla</NAIS_NAMESPACE>
+                        <NAIS_NAMESPACE>default</NAIS_NAMESPACE>
                     </environmentVariables>
                 </configuration>
             </plugin>
