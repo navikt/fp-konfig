@@ -15,7 +15,7 @@ public enum Cluster {
     private static final String PROD = "prod";
     private static final String DEV = "dev";
     private static final String FSS = "fss";
-    private static final String GCP = "fss";
+    private static final String GCP = "gcp";
 
     private final String name;
 

@@ -104,7 +104,7 @@ public final class Environment {
     }
 
     public boolean isGcp() {
-        return cluster.isFss();
+        return cluster.isGcp();
     }
 
     public String clusterName() {
