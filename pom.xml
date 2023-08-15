@@ -6,7 +6,7 @@
 
     <groupId>no.nav.foreldrepenger</groupId>
     <artifactId>konfig</artifactId>
-    <version>2.0-SNAPSHOT</version>
+    <version>3.0-SNAPSHOT</version>
 
     <properties>
         <java.version>17</java.version>
@@ -25,7 +25,7 @@
         <sonar.projectName>fp-konfig</sonar.projectName>
         <sonar.projectKey>navikt_fp-konfig</sonar.projectKey>
 
-        <jakarta.jakartaee-bom.version>9.1.0</jakarta.jakartaee-bom.version>
+        <jakarta.jakartaee-bom.version>10.0.0</jakarta.jakartaee-bom.version>
     </properties>
 
     <dependencyManagement>
@@ -51,6 +51,16 @@
         <dependency>
             <groupId>jakarta.enterprise</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.inject</groupId>
+            <artifactId>jakarta.inject-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
